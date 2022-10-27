@@ -1,25 +1,28 @@
 import { useState } from "react";
 
 function Input(props){
-    const { onPoruka } = props;
+    const { onLetter } = props;
 
     const [text, setText] = useState("");
+
+
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        setText("");
+        onLetter(text);
+    }
     
     const handleValueChange = (event) => {
         setText(event.target.value);
     }
 
-    const onFormSubmit = (e) => {
-        e.preventDefault();
-        setText("");
-        onPoruka(text);
-    }
-    
+   
     return(
         <div className="input-div">
             <form onSubmit={e => onFormSubmit(e)} className="form">
-                <input type="text" onChange={handleValueChange} placeholder="Write your message" autoFocus={true} value={text}className="inp"/>
-                <button className="btn">Send!</button>
+                <input type="text" onChange={handleValueChange} placeholder="Start Chating" autoFocus={true} value={text}className="inp"/>
+                <button className="btn">SEND</button>
             </form>
         </div>
     )

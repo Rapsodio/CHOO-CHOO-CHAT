@@ -3,40 +3,38 @@ function randomId(){
     const id = random.float();
     return id;
 }
-
 function Messages(props){
+    
+    const { posting } = props;
+    const { user } = props;
+    
 
-    const { korisnik } = props;
-    const { poruke } = props;
 
-
-    const ispisiPoruke = (message) => {
+    const printMessages = (message) => {
         const { member, text } = message;
-        const stil = member.id === korisnik.id ? "poruka-trenutni-korisnik" : "poruka";
-        const stilPoruka = member.id === korisnik.id ? "boja-poruke-trenutni" : "boja-poruke";
-        const sadrzajStil = member.id === korisnik.id ? "poruka-sadrzaj-trenutni" : "poruka-sadrzaj";
+        const contentstyle = member.id === user.id ? "content-message" : "content-message-comp";
+        const styling = member.id === user.id ? "message-user" : "message-comp";
+        const styleMessage = member.id === user.id ? "colour-message" : "colour-message-comp";
+       
         return(
-            <li className={stil} key={randomId()}>
-                <div className={sadrzajStil}>
+            <li className={styling} key={randomId()}>
+                <div className={contentstyle}>
                     <div className="username">
                         {member.clientData.username}
                     </div>
-                    <div className={stilPoruka}> 
+                    <div className={styleMessage}> 
                         <p>{text}</p>
                     </div>
                 </div>
             </li>
         )
     };
-
-   
-    return(
-        <div className="lista-div">
-            <ul className="lista-poruka">
-                {poruke.map(el => ispisiPoruke(el))}
+return(
+        <div className="lists-div">
+            <ul className="message-lists">
+                {posting.map(el => printMessages(el))}
             </ul>
         </div>
     )
 }
-
 export default Messages;
