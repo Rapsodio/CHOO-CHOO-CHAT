@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import statusWeb from './statusWeb';
 import "./App.css";
 
 ReactDOM.render(
@@ -11,4 +11,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-reportWebVitals();
+statusWeb();

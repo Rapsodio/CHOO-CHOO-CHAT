@@ -8,10 +8,8 @@ function Messages(props){
     const { posting } = props;
     const { user } = props;
     
-
-
     const printMessages = (message) => {
-        const { member, text } = message;
+        const { text, member } = message;
         const contentstyle = member.id === user.id ? "content-message" : "content-message-comp";
         const styling = member.id === user.id ? "message-user" : "message-comp";
         const styleMessage = member.id === user.id ? "colour-message" : "colour-message-comp";
