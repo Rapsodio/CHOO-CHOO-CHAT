@@ -9,5 +9,4 @@ const statusWeb = onPerfEntry => {
     });
   }
 };
-
 export default statusWeb;

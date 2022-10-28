@@ -14,7 +14,6 @@ function Input(props){
     const handleValueChange = (event) => {
         setText(event.target.value);
     }
-
     return(
         <div className="input-div">
             <form onSubmit={e => onFormSubmit(e)} className="form">

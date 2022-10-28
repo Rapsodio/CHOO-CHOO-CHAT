@@ -46,6 +46,7 @@ class App extends React.Component {
       this.setState({messages: messages});
     })
   }
+  
     handleMessage = (message) => {
     this.drone.publish({
       room: "observable-chatroom",
